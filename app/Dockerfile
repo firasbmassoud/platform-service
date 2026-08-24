@@ -10,9 +10,9 @@ RUN --mount=type=cache,target=/root/.m2 mvn -B -q dependency:go-offline
 COPY src ./src
 RUN --mount=type=cache,target=/root/.m2 mvn -B -q -DskipTests package
 
-FROM eclipse-temurin:21-jre AS runtime
+FROM eclipse-temurin:21-jre-alpine AS runtime
 
-RUN useradd --system --uid 10001 --create-home app
+RUN addgroup -S app && adduser -S -u 10001 -G app app
 
 WORKDIR /app
 COPY --from=build --chown=app:app /build/target/*.jar app.jar
