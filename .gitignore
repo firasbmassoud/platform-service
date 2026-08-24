@@ -1,0 +1,19 @@
+# Java
+target/
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+
+# Provider versions are pinned deliberately, so the lock file is committed.
+!.terraform.lock.hcl
+
+# macOS
+.DS_Store
+
+# Editors
+.idea/
+*.iml
+.vscode/
