@@ -1,0 +1,10 @@
+# Build output is produced inside the image; copying the host's target/ in
+# would both bloat the context and risk shipping a stale jar.
+target/
+
+.git
+.gitignore
+.mvn/
+mvnw
+mvnw.cmd
+HELP.md
